@@ -1,0 +1,523 @@
+
+    \chapter{Methods}
+\section{Data acquisition and preprocessing}
+\subsection{Occasional and chronic users of cannabis} 
+
+\textbf{Ethics statement}:
+This study was conducted according to the code of ethics on human
+experimentation established by the declaration of Helsinki (1964) and
+amended in Fortaleza (Brazil, October 2013). The study was approved by
+the Academic Hospital and University's Medical Ethics Committee (Medical
+ethical review board Academic Hospital Maastricht/ Maastricht
+University). All participants gave written informed consent. The Dutch
+Drug Enforcement Administration gave a permit for the acquisition,
+storage, and administration of cannabis.
+
+\textbf{Participants}: The data acquisition protocols were described in
+detail in a previous paper \parencite{Ramaekers2022}. 43 healthy
+participants with previous experience using cannabis were scanned. For
+the occasional group, occasional usage was characterized as between one
+time a month and three times a week. For the chronic group, chronic
+usage was characterized as at least four times a week. Both were
+considered only if usage was for the past year. The study was conducted
+according to a double-blind, placebo-controlled, mixed cross-over design
+in cannabis users (N=43). Each participant received cannabis placebo and
+cannabis (300 ug/kg THC) on separate days, separated by a minimum
+wash-out period of 7 days. Treatment orders were randomly assigned to
+participants.
+
+Participants received two resting state scans at 15 minutes and 36
+minutes after inhalation. The current study was registered in the
+Netherlands trial register (NTR4894, first date of registration
+7/11/2014). Participants in the occasional group were instructed to
+refrain from drug use, including cannabis (\textgreater7 days) and
+alcohol (\textgreater14 hours) prior to the testing day. Participants in
+the chronic group were given the same instructions, but instructed to
+refrain from cannabis use only up until 24h before testing day.
+
+\textbf{Neuroimaging acquisition for fMRI}: Participants underwent a
+resting state functional MRI. Images were acquired on a MAGNETOM 7T MR
+scanner. A total of 258 whole-brain EPI volumes were acquired at rest
+(TR = 1400ms; TE = 21ms; flip angle = 60 degrees; oblique acquisition
+orientation; interleaved slice acquisition; 72 slices; slice thickness =
+1.5mm; voxel size = 1.5 x 1.5 x 1.5 mm). During scanning, participants
+were shown a black cross on a white background and were instructed to
+focus on the cross while attempting to clear the mind.
+
+Results related to the cannabis data included in this manuscript come
+from analyses performed using CONN (RRID:SCR\_009550) release 22.a and
+SPM (RRID:SCR\_007037) release 12.7771 \parencite{Nieto-Castanon2022,Penny2007,Whitfield-Gabrieli2012}.
+
+\textbf{Preprocessing:} Preprocessing was performed in line with \textcite{Luppi2021}. Functional and anatomical data were
+preprocessed using a flexible preprocessing pipeline including
+realignment with correction of susceptibility distortion interactions,
+slice timing correction, outlier detection, direct segmentation and
+MNI-space normalization, and smoothing \parencite{Nieto-Castanon2020}.
+Functional data were realigned using SPM realign \& unwarp procedure,
+where all scans were coregistered to a reference image (first scan of
+the first session) using a least squares approach and a 6 parameter
+(rigid body) transformation, and resampled using b-spline interpolation
+to correct for motion and magnetic susceptibility interactions \parencite{Andersson2001,Friston1995}. Temporal
+misalignment between different slices of the functional data (acquired
+in interleaved Siemens order) was corrected following SPM slice-timing
+correction (STC) procedure, using sinc temporal interpolation to
+resample each slice BOLD timeseries to a common mid-acquisition time \parencite{Henson1999,Sladky2011}. Potential outlier scans were
+identified using ART as acquisitions with framewise displacement above
+0.5 mm or global BOLD signal changes above 3 standard deviations, and a
+reference BOLD image was computed for each subject by averaging all
+scans excluding outliers \parencite{Nieto-Castanon2022a,Power2014,Whitfield-Gabrieli2011}. Functional and
+anatomical data were normalized into standard MNI space, segmented into
+grey matter, white matter, and CSF tissue classes, and resampled to 2 mm
+isotropic voxels following a direct normalization procedure using SPM
+unified segmentation and normalization algorithm with the default
+IXI-549 tissue probability map template \parencite{Ashburner2007,Ashburner2005,Calhoun2017,Nieto-Castanon2022a}. Last, functional data were smoothed using
+spatial convolution with a Gaussian kernel of 6 mm full width half
+maximum (FWHM).
+
+\textbf{Denoising:} In addition, functional data were denoised using a
+standard denoising pipeline including the regression of potential
+confounding effects characterized by white matter timeseries (8 CompCor
+noise components), CSF timeseries (5 CompCor noise components), motion
+parameters and their first order derivatives (12 factors), outlier scans
+(below 163 factors), session and task effects and their first order
+derivatives (4 factors), and linear trends (2 factors) within each
+functional run, followed by bandpass frequency filtering of the BOLD
+timeseries between 0.008 Hz and 0.09 Hz \parencite{Friston1996,Hallquist2013,Nieto-Castanon2020,Power2014}.
+CompCor noise components within white matter and CSF were estimated by
+computing the average BOLD signal as well as the largest principal
+components orthogonal to the BOLD average, motion parameters, and
+outlier scans within each subject's eroded segmentation masks \parencite{Behzadi2007,Chai2012}. From the number of noise terms
+included in this denoising strategy, the effective degrees of freedom of
+the BOLD signal after denoising were estimated to range from 78.5 to
+296.4 (average 195.6) across all subjects \parencite{Nieto-Castanon2022a}.
+
+\subsection{DMT}\label{dmt}
+
+\textbf{Ethics:} All participants provided written informed consent for
+participation in the study. The study was approved by the National
+Research Ethics Committee London-Brent and the Health Research
+Authority, and was conducted under the guidelines of the revised
+Declaration of Helsinki (2000), the International Committee on
+Harmonization Good Clinical Practices guidelnes, and the National Health
+Service Resaerch Governance Framework. Imperial College London sponsored
+the resaerch, which was onducted under a Home Office license for
+research with Schedule I drugs.
+
+\textbf{Participants}: The data acquisition methods were described in a
+previous paper, but will be briefly reported here \parencite{Timmermann2023}. The study was a single-blind, placebo-controlled,
+counter-balanced design. Volunteers participated in two testing days,
+separated by two weeks. Participants were tested for drugs of abuse and
+involved in two separate scanning sessions on each test day. In the
+initial, task-free session, participants received intravenous (IV)
+administration of either placebo (10mL sterile saline) or 20mg DMT
+fumarate (in 10mL sterile saline) injected over 30 seconds.
+Resting-state sessions lasted 28 minutes with DMT or placebo
+administered at the end of the 8th minute and scanning was over 20
+minutes after injection. Participants laid in the scanner with an eye
+mask on. A second session was followed with the same procedure as the
+first.
+
+\textbf{Neuroimaging Acquisition for fMRI:} Images were acquired with a
+3T Siemens Magnetom Verio syngo MR B17 scanner using 12-channel head
+coil for compatibility with EEG acquisition. Functional imaging was
+carried out with a T2*-weighted BOLD-sensitive gradient echo planar
+imaging sequence (TR = 2000 ms, TE = 30ms, TA = 28.06 ms, flip angle =
+80 degrees, voxel size = 3 x 3 x 3mm, 35 slices, interslice distance =
+0mm). Whole brain T1-weighted structural images were also acquired.
+
+\textbf{Preprocessing:} Preprocessing was performed in line with
+previous work \parencite{Timmermann2023}. Steps consisted of 1) despiking
+(3dDespike, Analysis of Functional Neuroimages (AFNI)) \parencite{Cox1996}, 2)
+slice-timing correction (3dTshift, AFNI), 3) motion correction
+(3dvolreg, AFNI) by registering each volume to the most similar volume
+with least squares to all others, 4) brain extraction (BET, FSL) \parencite{Smith2004}, 5) rigid body registration to anatomical scans, 6)
+nonlinear registration to 2mm MNI brain (Symmetric Normalization,
+Advanced Normalization Tools (ANTS)) \parencite{Avants2009}, 7) scrubbing
+(FD threshold = 0.4) and scrubbed volumes were replaced with mean of
+surrounding volummes. Additional preprocessing steps included the use of
+8) spatial smoothing (FWHM = 6mm) (3dBlurInMask, AFNI), 9) band-pass
+filtering between 0.01 and 0.08 Hz (3dFourier, AFNI), 10) linear and
+quadratic detrending (3dDetrend, AFNI), 11) regressing out nine nuisance
+regressors (6 motion related, 3 anatomical) with band-pass filter with
+same filter as in step 9). Anatomical nuisance regressors included
+ventricles (FreeSurfer, eroded in 2mm space) \parencite{Dale1999},
+draining veins (FSL CSF minus FreeSurfer ventricles, eroded in 1mm
+space), local white matter (FSL WM minus FreeSurfer subcortical gray
+matter structures, eroded in 2mm space). Local WM regression was
+performed with AFNI 3dLocalstat, calculating mean local WM timeseries
+for each voxel using 25mm radius sphere centered on each voxel.
+\subsection{Chronic users of ayahuasca} 
+\textbf{Ethics statement:} 
+The study was conducted according to the code of ethics on human experimentation established by the Declaration of Helsinki (1964) and amended in Fortaleza (Brazil, October 2013) and in accordance with the Medical Research involving Human Subjects Act (WMO) and was approved by the Academic Hospital and University's Medical Ethics committee (Medical ethical review board Academic Hospital Maastricht/Maastricht University)\\ (NL70901.068.19/METC19.050). All participants were fully informed of all
+procedures, possible adverse reactions, legal rights and
+responsibilities, expected benefits, and their right to voluntary
+termination without consequences.
+
+\textbf{Participants}: The data acquisition protocols were described in
+detail in a previous paper \parencite{Mallaroni2022}. Twenty four
+participants were enrolled in a within-subject, fixed-order
+observational study. The cohort consisted of experienced members of the
+Dutch chapter of the church Santo Daime. Participants underwent two
+consecutive test days -- one baseline followed by another under the
+influence of ayahuasca. Participants administered to themselves a volume
+of ayahuasca equivalent to their usual dose (0.045 mg/kg), prepared from
+a single batch by the Church of Santo Daime and analyzed according to
+referencing standards (see previous paper for details). To facilitate
+and naturalize the study, participants drank ayahuasca while initiating
+the works in company of fellow members. Dosing schedules were stratified
+across lab visits with testing performed within 4 pairs of visits, with
+6 subjects per cycle. The brew used contained 0.14 mg/mL DMT, 4.50mg/ML
+harmine, 0.51mg/mL harmaline, and 2.10 mg/mL tetrahydroharmine.
+Ceremonies were organised and supervised by the Santo Daime church. The
+research term at Maastricht University was not involved in the
+organization of the rituals, production, dosing, or administration of
+ayahuasca.
+
+\textbf{Neuroimaging acquisition for fMRI:} Participants underwent
+resting state functional MRI. Images were acquired on a MAGNETOM 7T MR
+scanner. Participants underwent a structural MRI (60 minutes
+post-treatment), single-voxel proton MRS in the PCC (70 minutes
+post-treatment), visual cortex (80 minutes post-treatment), and fMRI (90
+minutes post-treatment) during peak subjective effects. T1-weighted
+anatomical images were acquired with magnetization-prepared 2 rapid
+acquisition gradient-echo (MP2RAGE) sequence (TR = 4500ms, TE = 2.39 ms,
+TI1 = 900ms, TI2 = 2750ms, flip angle 1 = 5 degrees, flip angle 2 = 3
+degrees, voxel size = 0.9 mm isotropic, matrix size = 256 x 256 x 192,
+phase partial Fourier = 6/8, GRAPPA = 3 with 24 reference lines,
+bandwidth = 250 Hz/pixel). 500 whole brain echo planar (EPI) volumes
+were acquired at rest (TR = 1400ms; TE = 21ms; field of view = 198mm;
+flip angle = 60 degrees; oblique acquisition orientation; interleaved
+slice acquisition; 72 slices; slice thickness = 1.5mm; voxel size = 1.5
+x 1.5 x 1.5 mm) followed by 5 phase encoding volumes for EPI unwarping.
+Participants were shown a black cross on a white background and were
+instructed to focus on the cross during EPI acquisition.
+
+Results related to the ayahuasca data included in this manuscript come
+from analyses performed using CONN (RRID:SCR\_009550) release 21.a and
+SPM (RRID:SCR\_007037) release 12.7771 \parencite{Nieto-Castanon2022,Penny2007,Whitfield-Gabrieli2012} .
+
+\textbf{Preprocessing:} Preprocessing was performed with the same steps
+as occasional and chronic users of cannabis. Denoising was performed
+with the same standard denoising pipeline, including regression of
+potential confounding effects characterized by white matter time-series
+(5 CompCor noise components), CSF time-series (5 CompCor noise
+components), motion parameters and their first and second order
+derivatives (18 factors), outlier scans (below 206 factors), session and
+task effects and their first order derivatives (4 factors), and linear
+trends (2 factors) within each functional run, followed by bandpass
+frequency filtering of the BOLD timeseries between 0.008 Hz and 0.09 Hz \parencite{Friston1996,Hallquist2013,Nieto-Castanon2020,Power2014}. CompCor noise components within white matter
+and CSF were estimated by computing the average BOLD signal as well as
+the largest principal components orthogonal to the BOLD average, motion
+parameters, and outlier scans within each subject's eroded segmentation
+masks \parencite{Behzadi2007,Chai2012}. From the number of
+noise terms included in this denoising strategy, the effective degrees
+of freedom of the BOLD signal after denoising were estimated to range
+from 139.1 to 214 (average 202.2) across all subjects \parencite{Nieto-Castanon2022a}.
+\subsection{Structural connectivity} 
+To reconstruct
+a structural connectivity matrix for whole-brain modelling, we obtained
+multishell diffusion-weighted imaging data from 32 participants from the
+HCP database (scanned approx. 89 minutes) \parencite{Kringelbach2023}.
+Acquisition parameters are described in detail on the HCP website \parencite{Setsompop2013}. Diffusion tensor imaging data was parcellated
+according to the aforementioned DBS80 scheme. The connectivity matrix
+was weighted.
+\section{Analysis}
+Trophic coherence is
+a general method which allows us to infer the directedness and
+hierarchical levels for each brain region across the brain through the
+conversion of effective weighting of the existing anatomical
+connectivity as derived by a causal mechanistic whole-brain model into a
+directed graph \parencite{MacKay2020, Johnson2014}. This allows for examination of changes in the functional
+hierarchical organization of the brain across varying conditions. 
+\subsection{Empirical functional connectivity}
+The functional connectivity (FC)
+$FC_{ij}^{empirical}$ is a matrix of Pearson correlations across the
+fMRI BOLD timeseries activity between brain regions, \(i\) and \(j\), in
+different conditions. Spatially normalized brains (MNI-space) were
+parcellated into 62 cortical regions from the Mindboggle-modified
+Desikan-Killiany parcellation \parencite{Desikan2006}, with the addition
+of 18 subcortical regions (9 regions per hemisphere) including the
+hippocampus, amygdala, subthalamic nucleus (STN), globus pallidus
+internal segment (GPi), global pallidus external segment (GPe), putamen,
+caudate, nucleus accumbens, and thalamus from the Gasser parcellation
+(Glasser et al., 2016). This parcellation is referred to synonymously in
+previous literature as the DBS80 or DK80 custom parcellation \parencite{Capouskova2022,Deco2021,Desikan2006,Gomes2020,Klein2012,Kringelbach2023}.
+
+\subsection{Quantifying causal interactions through the level of
+irreversibility} 
+
+Previous research has shown that capturing the asymmetry
+in a temporal process, the arrow of time, by comparing time-shifted
+correlations between the forward and reversed BOLD fMRI time-series
+provides a quantification of the level of irreversibility \& the degree
+of non-equilibrium in brain dynamics, as well as the degree to which one
+brain region is driving another \parencite{Deco2022,Kringelbach2023}. An increase in irreversibility is associated with increased
+directionality of information flow and a resulting high level of
+hierarchical reorganization. It is by this
+notion that asymmetry in the directionality of information flow allows
+for determination of asymmetry in both space and time, resulting in
+distinct spatiotemporal hierarchies \parencite{Deco2019,Golesorkhi2021,Kobeleva2021}.
+
+The construction of the reversed time-series is done simply by reversing
+the natural forward evolution of the BOLD signal for each voxel across
+the space of the brain. The causal dependency between two time-series
+\(x(t)\) and \(y(t)\) is measured through the time-shifted correlation
+
+\begin{equation}
+c_{forward}(\Delta t) = <x(t),y(t+\Delta t)>
+\end{equation}
+ 
+and for the reversed time-series the time-shifted correlation is
+given by \parencite{Deco2022, Kringelbach2023}: 
+\begin{equation}
+c_{reversed}(\Delta t) = <x^{r}(t),y^{r}(t+\Delta t)>
+\end{equation}
+
+At a given time \(\Delta t = T\), the level of irreversibility can be
+computed as the absolute difference between the value of the correlation
+between the forward and reversed time-series, respectively. \(\Delta t\)
+represents the time shifting parameter \(T\):
+\begin{equation}
+I_{x,y}(T) = |c_{forward}(T) - c_{reversal}(T)|
+\end{equation}
+
+The value of \(T\) is given by, for each dataset, iterating through
+values of \(T\) and identifying the value which provides the strongest
+difference between conditions. Maximal differences between the
+correlation of the forward and reversed time-series can be found when
+one time-series has a strong dependency on time that the other does not.
+The forward \(x_i(t)\) and reversal \(x^{(r)}_i(t)\) matrices are
+defined as the dynamical evolution of the variable describing the
+system, wherein \(i\) represents the different dimensions of the system.
+The functional causal dependencies for the forward and reversed matrices
+are then expressed by the normalized mutual information based on their
+respective time-shifted correlations:
+
+
+\begin{equation}
+FS_{forward,ij}(\Delta t) = -\frac{1}{2}log[1-<x_i(t),x_j(t+\Delta t)>^2]
+\end{equation}
+
+\begin{equation}
+FS_{reversal,ij}(\Delta t) = -\frac{1}{2}log[1-<x_i^{(r)}(t),x_j^{(r)}(t+\Delta t)>^2]
+\end{equation}
+
+
+Mutual information is utilized as the relationship between variables in
+the multi-dimensional time-series is not necessarily linear. The
+absolute quadratic difference of these matrices is the irreversibility
+matrix
+
+
+\begin{equation}
+I=||FS_{forward}(T) - FS_{reversal}(T)||_2
+\end{equation}
+
+
+where \(I\) is the mean value of the absolute squares of the difference
+between the forward and reversed matrices. If the difference matrix is
+defined as such
+
+
+\begin{equation}
+FS_{diff,ij} = [FS_{forward,ij}(T) - FS_{reversal,ij}(T)]^2
+\end{equation}
+then the matrix is simply the square of the elements of the
+difference between the forward and reversal matrices. The level of NR,
+\(I\), is then the mean of the elements of \(FS_{diff}\). A simple
+measure of hierarchy is the standard deviation of \(I\), which measures
+the variability in the asymmetry of brain activity. 
+
+\subsection{Generative effective connectivity of the arrow of time}
+As previously described by \textcite{Kringelbach2023}, local dynamics of each brain region are described by
+the normal form of a supercritical Hopf bifurcation. The whole-brain dynamics are given by coupling nodes through the
+inclusion of a diffusive coupling term, common difference coupling,
+representing the input received by a region \(n\) from every other
+region \(p\), weighted by the GEC, \(G_{np}\). The dynamics of
+individual nodes are given by the normal form of a supercritical Hopf
+bifurcation in Cartesian coordinates with an additive Gaussian noise
+\(\eta_n(t)\) and standard deviation \(\beta\):
+
+
+\begin{equation}
+\frac{dx_n}{dt} = [a_n - x^2_n - y^2_n]x_n - \omega_ny_n+\sum_{p=1}^N{G_{np}(x_p-x_n)} + \beta\eta_n(t)
+\end{equation}
+
+\begin{equation}
+\frac{dy_n}{dt} = [a_n - x^2_n - y^2_n]y_n + \omega_nx_n+\sum_{p=1}^N{G_{np}(y_p-xy_n)} + \beta\eta_j(t)
+\end{equation}
+
+
+The normal form has a supercritical bifurcation \(a_n=0\), where when
+\(a_n>0\), the system is engaged in a stable limit cycle with frequency
+\(f_n = \omega_n/2\pi\). When \(a_n<0\), local dynamics are in a stable
+fixed point which represents the low activity noise state. Intrinsic
+frequencies \(\omega_n\) are estimated from the data given by the
+averaged peak frequency of narrowband BOLD signals of each brain region
+(n = 1, \ldots, 80). The best fit for \(a_n\) will be calculated after
+model estimation. The noise factor \(\beta\) is set, by default, to
+0.01.
+
+The whole-brain model was constructed by fitting the existing anatomical
+connectivity to the empirical functional connectivity (FC) matrix and
+the time-delayed covariance matrix, or the covariance of
+irreversibility. Effective connectivity was simulated for the ayahuasca
+users, DMT users, and occasional and chronic cannabis users.
+Optimization of the GEC between brain regions is performed by comparing
+the output of the model with empirical measures of the forward and
+reversed time-shifted correlations and the whole-brain functional
+connectivity. A heuristic gradient descent algorithm is used to update
+and optimize the fit of the GEC, error estimated by mean squared error
+between the empirical and simulated functional connectivity matrix and
+covariance of irreversibility. All values are transformed into mutual
+information, assuming Gaussianity, to work only positive values:
+
+
+\begin{equation}
+    \begin{aligned}
+        G_{ij} = G_{ij} + \epsilon(FS_{ij}^{empirical} - FS_{ij}^{model}) - \epsilon'\biggl\{ \Bigl[FS_{forward,ij}^{empirical}(T) - \\FS^{empirical}_{reversal,ij}(T)\Bigr] - \Bigl[FS_{forward,ij}^{model}(T) - FS^{model}_{reversal,ij}(T)\Bigr]\biggr\}
+    \end{aligned}
+\end{equation}
+
+
+
+
+\(FS_{ij}\) is based on the functional connectivity matrix \(FC_{ij}\)
+as mutual information obtained by:
+
+
+\begin{equation}
+FS_{ij}=-\frac{1}{2}log[1-(FC_{ij})^2]
+\end{equation}
+The model was initialized with the anatomical connectivity obtained
+from probabilistic tractography from dMRI and iterated with the updated
+GEC until the fit converged toward a stable value \(a_n\), with
+\(\epsilon = 0.0005\) and \(\epsilon^`=0.0001\). Only known existing
+connections in either hemisphere were updated, with one exception -- the
+algorithm also updates homolog connections between the same regions in
+either hemisphere, given that tractography is less accurate when
+accounting for this connectivity. Model results are computed for each
+participant, and averaged over as many simulations as there are
+participants for each condition. The model was linearized with the
+addition of a Jacobian matrix for steady state estimation. Updated
+covariance matrices and functional connectivity matrices were calculated
+by solving the Sylvester equation for the Jacobian with noise
+covariances. 
+
+\subsection{Trophic coherence} The GEC matrix represents the
+effective weighting between different nodes. In other words, it provides
+connection strengths as edges between brain regions. The advantage of
+utilizing a whole-brain model to construct the effective connectivity of
+the FC and the NR matrix is that it allows for causal inference of the
+directionality of influence that one region in the brain has on another.
+Trophic coherence is a property of directed graphs that has been
+previously used as a statistical predictor of the linear stability of
+food webs, but can be applied to any directed graph \parencite{Johnson2014, MacKay2020}. Here we use an improved notation of trophic
+coherence, first introduced by \textcite{MacKay2020}, that allows for non-existence of basal nodes (a node with no
+incoming edges) and the examination of reverse flows -- this is
+important for brain networks, as brain regions do not simply interact in
+a feed-forward manner, but have feedback loops and self-loops.
+
+If we consider a directed network with a set \(N\) of nodes and set
+\(E\) of edges, we can suppose there is at most one edge from node \(m\)
+to node \(n\), with the possibility of an edge from \(n\) to \(m\) as
+well. Each edge has some weight \(w_{mn}>0\). This describes the
+effective weighting, or functional influence, of one brain region on
+another. If an edge does not exist between a node \(m\) and \(n\), we
+denote this with \(w_{mn}=0\). We then define the in-degree and
+out-degree for each node \(n\) as
+
+
+\begin{equation}
+w_n^{in}=\sum_{m}{w_{nm}} \quad\mathrm{and}\quad w_n^{out}=\sum_{m}{w_{mn}}.
+\end{equation}
+ The total weight of each node \(n\) is denoted as 
+\begin{equation}
+u_n=w_n^{in}+w_n^{out},
+\end{equation}
+ which can be given alternatively by the sum of sum of rows and
+columns, respectively, for a weighted matrix \(W\), where the sum of
+rows represents the vectorized in-degree, and sum of columns represents
+the vectorized out-degree. The imbalance for each node \(n\) is given by
+
+\begin{equation}
+v_n=w_n^{in}-w_n^{out},
+\end{equation}
+which can be alternatively provided by the difference between sum of
+rows and sum of columns for \(W\). The weighted graph-Laplacian operator
+\(\Lambda\) can be defined in matrix form by 
+\begin{equation}
+\Lambda = diag(u) - W - W^T,
+\end{equation}
+ where T is the transpose of the weighted matrix \(W\). The
+hierarchical levels for each brain region can then be solved from the
+solution \(\gamma\) for the linear system of equations 
+\begin{equation}
+\Lambda\gamma = v.
+\end{equation}
+To force the system to always have a unique solution, it is possible
+to add an arbitrary constant to one edge of the network. Specifically,
+one must add an arbitrary constant to each connected component of the
+network, or the maximal subset of the network where one can move,
+ignoring direction of edges, between any node \(m\) and \(n\) in the
+component. Though anatomical connectivity is sparse in the brain, there
+is only one connected component by definition. In our case, we used the
+self-loop in the first node. Furthermore, one can normalize the
+hierarchical levels, thereby also creating a basal node in the network,
+by subtracting from each hierarchical level the minimum of the vector
+\(\gamma\). Following this, trophic incoherence can be given by 
+\begin{equation}
+F_0=1-\frac{\sum_{mn}w_{mn}{(\gamma_n-\gamma_m-1)^2}}{\sum_{mn}{w_{mn}}}.
+\end{equation}
+The trophic coherence is then defined by \(1-F_0\). A network is
+considered to be maximally coherent is \(F_0=0\) and maximally
+incoherent if \(F_0=1\). Maximally coherent networks have nodes that
+fall evenly onto defined trophic levels, while incoherent networks have
+many nodes lying on fractional trophic levels. We can then treat trophic
+coherence as the directedness of the network.
+
+Emphasis was placed on robust connections and achieved by thresholding
+weighting between regions such that only edges with \(w_{mn}>0.015\) are
+considered to have an existing connection for visualization purposes.
+Statistical analysis is carried out with weak edges intact as weak
+connections often represent important connections between clusters.
+\subsection{SVM for condition classification} 
+We used a error-correcting output code support vector machine
+as implemented with the MATLAB function \texttt{fitcecoc}, with 90\%
+training and 10\% validation split. We optimized hyperparameters with
+automatic settings and utilized \texttt{expected-improvement-plus} as an
+acquisition function. The function returns a fully trained model
+utilizing the predictors in the input with class labels. We then
+cross-validated the model with 20 k-fold cross-validation, and evaluated
+the general error and accuracy. The SVM uses inputs for each dataset and
+for all datasets and conditions, to predict differences in the
+distribution of hierarchical levels across baseline and acute
+administration conditions, as well as between occasional and chronic
+users of ayahuasca/DMT and cannabis. 
+\subsection{Statistical analysis}
+Changes
+in irreversibility, hierarchy, and trophic coherence were calculated for
+each condition with a Wilcoxon rank-sum test with \(\alpha = 0.05\) as
+the threshold for statistical significance, implemented in the R package
+\texttt{ggsignif} \parencite{ggsignif, Tidyverse, Package}. For DMT, we fit post-DMT data (irreversibility or
+directedness) to a linear mixed effects model with the MATLAB function
+\texttt{fitlme} with pre-injection, or baseline, data as a covariate and
+group as the fixed effect \parencite{MATLAB}. Furthermore, we tested for interaction
+effects between group and pre-injection data.
+
+A linear mixed effects model was fit to the ayahuasca data with
+ayahuasca or baseline condition as the outcome variable with time since
+last ceremony (recency) and the number of total ceremonies, as well as
+their interaction, as fixed effects, and max DMT concentration in the
+blood (ng/ml) as a covariate. Individual subject variance at the
+intercept was allowed in the model. Linear fit was determined with the
+MATLAB function \texttt{polyfit} and \(R^2\) as the squared correlation
+coefficient.
+
+Changes across conditions for the full 80 region and functional network
+hierarchical levels were obtained via a three-step process.
+Non-parametric, two-tailed 10,000 iteration permutation testing was
+performed for each region or functional network with a p-threshold of
+0.01. Benjamini-Hochberg False Discovery Rate was used with a threshold
+of 0.2 to identify false discoveries and correct for multiple
+comparisons \parencite{Benjamini1995}. 
