@@ -1,5 +1,5 @@
 # maastricht-thesis
-The Anarchically organized brain: Changes in functional hierarchical organization resulting from chronic and occasional use of psychedelics and cannabis
+The anarchically organized brain: Changes in functional hierarchical organization resulting from chronic and occasional use of psychedelics and cannabis
 ---   
 `MSc Cognitive and Clinical Neuroscience, Maastricht University`
 
