@@ -16,4 +16,5 @@ The Anarchically organized brain: Changes in functional hierarchical organizatio
 > Professor of Neuroscience, Aarhus University  
 > Fellow, Linacre College  
 ### Jan Ramaekers
-> Professor of Psychopharmacology and Behavioral Toxicology, Faculty of Psychology & Neuroscience, Maastricht University
+> Professor of Psychopharmacology and Behavioral Toxicology
+> Faculty of Psychology & Neuroscience, Maastricht University
