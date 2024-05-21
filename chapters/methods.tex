@@ -48,7 +48,7 @@ Results related to the cannabis data included in this manuscript come
 from analyses performed using CONN (RRID:SCR\_009550) release 22.a and
 SPM (RRID:SCR\_007037) release 12.7771 \parencite{Nieto-Castanon2022,Penny2007,Whitfield-Gabrieli2012}.
 
-\textbf{Preprocessing:} Preprocessing was performed in line with \textcite{Luppi2021}. Functional and anatomical data were
+\textbf{Preprocessing:} Preprocessing was performed in line with \textcite{Luppi2021}. Eight participants were removed due to excessive motion identified by ART as greater than 0.3mm framewise head displacement or global BOLD signal changes above 3 standard deviations. Functional and anatomical data were
 preprocessed using a flexible preprocessing pipeline including
 realignment with correction of susceptibility distortion interactions,
 slice timing correction, outlier detection, direct segmentation and
@@ -125,27 +125,26 @@ imaging sequence (TR = 2000 ms, TE = 30ms, TA = 28.06 ms, flip angle =
 80 degrees, voxel size = 3 x 3 x 3mm, 35 slices, interslice distance =
 0mm). Whole brain T1-weighted structural images were also acquired.
 
-\textbf{Preprocessing:} Preprocessing was performed in line with
-previous work \parencite{Timmermann2023}. Steps consisted of 1) despiking
-(3dDespike, Analysis of Functional Neuroimages (AFNI)) \parencite{Cox1996}, 2)
-slice-timing correction (3dTshift, AFNI), 3) motion correction
-(3dvolreg, AFNI) by registering each volume to the most similar volume
-with least squares to all others, 4) brain extraction (BET, FSL) \parencite{Smith2004}, 5) rigid body registration to anatomical scans, 6)
-nonlinear registration to 2mm MNI brain (Symmetric Normalization,
-Advanced Normalization Tools (ANTS)) \parencite{Avants2009}, 7) scrubbing
-(FD threshold = 0.4) and scrubbed volumes were replaced with mean of
-surrounding volummes. Additional preprocessing steps included the use of
-8) spatial smoothing (FWHM = 6mm) (3dBlurInMask, AFNI), 9) band-pass
-filtering between 0.01 and 0.08 Hz (3dFourier, AFNI), 10) linear and
-quadratic detrending (3dDetrend, AFNI), 11) regressing out nine nuisance
-regressors (6 motion related, 3 anatomical) with band-pass filter with
-same filter as in step 9). Anatomical nuisance regressors included
-ventricles (FreeSurfer, eroded in 2mm space) \parencite{Dale1999},
-draining veins (FSL CSF minus FreeSurfer ventricles, eroded in 1mm
-space), local white matter (FSL WM minus FreeSurfer subcortical gray
-matter structures, eroded in 2mm space). Local WM regression was
-performed with AFNI 3dLocalstat, calculating mean local WM timeseries
-for each voxel using 25mm radius sphere centered on each voxel.
+\textbf{Preprocessing:} Preprocessing was performed with the same steps
+as occasional and chronic users of cannabis. Four participants were removed due to excessive motion identified by ART as greater than 0.3mm framewise head displacement or global BOLD signal changes above 3 standard deviations. Denoising was performed
+with the same standard denoising pipeline, including regression of
+potential confounding effects characterized by white matter time-series
+(5 CompCor noise components), CSF time-series (5 CompCor noise
+components), motion parameters and their first and second order
+derivatives (18 factors), outlier scans (below 236 factors), session and
+task effects and their first order derivatives (4 factors), and linear
+trends (2 factors) within each functional run, followed by bandpass
+frequency filtering of the BOLD timeseries between 0.008 Hz and 0.09 Hz \parencite{Friston1996,Hallquist2013,Nieto-Castanon2020,Power2014}. CompCor noise components within white matter
+and CSF were estimated by computing the average BOLD signal as well as
+the largest principal components orthogonal to the BOLD average, motion
+parameters, and outlier scans within each subject's eroded segmentation
+masks \parencite{Behzadi2007,Chai2012}. From the number of
+noise terms included in this denoising strategy, the effective degrees
+of freedom of the BOLD signal after denoising were estimated to range
+from 413 to 520.5 (average 489.6) across all subjects \parencite{Nieto-Castanon2022a}.
+
+
+
 \subsection{Chronic users of ayahuasca} 
 \textbf{Ethics statement:} 
 The study was conducted according to the code of ethics on human experimentation established by the Declaration of Helsinki (1964) and amended in Fortaleza (Brazil, October 2013) and in accordance with the Medical Research involving Human Subjects Act (WMO) and was approved by the Academic Hospital and University's Medical Ethics committee (Medical ethical review board Academic Hospital Maastricht/Maastricht University)\\ (NL70901.068.19/METC19.050). All participants were fully informed of all
@@ -197,7 +196,7 @@ from analyses performed using CONN (RRID:SCR\_009550) release 21.a and
 SPM (RRID:SCR\_007037) release 12.7771 \parencite{Nieto-Castanon2022,Penny2007,Whitfield-Gabrieli2012} .
 
 \textbf{Preprocessing:} Preprocessing was performed with the same steps
-as occasional and chronic users of cannabis. Denoising was performed
+as occasional and chronic users of cannabis. No participants were removed due to excessive motion identified by ART as greater than 0.3mm framewise head displacement or global BOLD signal changes above 3 standard deviations. Denoising was performed
 with the same standard denoising pipeline, including regression of
 potential confounding effects characterized by white matter time-series
 (5 CompCor noise components), CSF time-series (5 CompCor noise
@@ -223,10 +222,10 @@ according to the aforementioned DBS80 scheme. The connectivity matrix
 was weighted.
 \section{Analysis}
 Trophic coherence is
-a general method which allows us to infer the directedness and
+a graph-theoretic approach which allows us to infer the directedness and
 hierarchical levels for each brain region across the brain through the
 conversion of effective weighting of the existing anatomical
-connectivity as derived by a causal mechanistic whole-brain model into a
+connectivity, as derived by a causal mechanistic whole-brain model, into a
 directed graph \parencite{MacKay2020, Johnson2014}. This allows for examination of changes in the functional
 hierarchical organization of the brain across varying conditions. 
 \subsection{Empirical functional connectivity}
@@ -235,13 +234,13 @@ $FC_{ij}^{empirical}$ is a matrix of Pearson correlations across the
 fMRI BOLD timeseries activity between brain regions, \(i\) and \(j\), in
 different conditions. Spatially normalized brains (MNI-space) were
 parcellated into 62 cortical regions from the Mindboggle-modified
-Desikan-Killiany parcellation \parencite{Desikan2006}, with the addition
+Desikan-Killiany parcellation \parencite{Desikan2006,Klein2012}, with the addition
 of 18 subcortical regions (9 regions per hemisphere) including the
 hippocampus, amygdala, subthalamic nucleus (STN), globus pallidus
 internal segment (GPi), global pallidus external segment (GPe), putamen,
 caudate, nucleus accumbens, and thalamus from the Gasser parcellation
 (Glasser et al., 2016). This parcellation is referred to synonymously in
-previous literature as the DBS80 or DK80 custom parcellation \parencite{Capouskova2022,Deco2021,Desikan2006,Gomes2020,Klein2012,Kringelbach2023}.
+previous literature as the DBS80 or DK80 parcellation \parencite{Capouskova2022,Deco2021,Desikan2006,Gomes2020,Klein2012,Kringelbach2023}.
 
 \subsection{Quantifying causal interactions through the level of
 irreversibility} 
@@ -257,6 +256,20 @@ hierarchical reorganization. It is by this
 notion that asymmetry in the directionality of information flow allows
 for determination of asymmetry in both space and time, resulting in
 distinct spatiotemporal hierarchies \parencite{Deco2019,Golesorkhi2021,Kobeleva2021}.
+
+By definition, non-hierarchical processes are in detailed balance and
+are fully reversible processes. In contrast, hierarchical processes have
+irreversible trajectories and result in the production of entropy.
+Production entropy is quantified as the Kullback-Leibler distance
+between the forward and backward transition probability of the dynamic
+evolution of a system. We leveraged the asymmetry of information flow,
+calculating the time-shifted correlation between each voxel across the
+brain for both the forward and reversed time-series.  The asymmetry
+between time-series reflects the time-dependency of causal
+interactions between regions of interest, and irreversibility can be
+evaluated as the absolute quadratic difference between the pairwise
+time-shifted correlation between forward and reversed time-series. Through this, irreversibility queries the production entropy of the
+brain \parencite{Lynn2021,SanzPerl2021}.
 
 The construction of the reversed time-series is done simply by reversing
 the natural forward evolution of the BOLD signal for each voxel across
@@ -274,20 +287,19 @@ c_{reversed}(\Delta t) = <x^{r}(t),y^{r}(t+\Delta t)>
 \end{equation}
 
 At a given time \(\Delta t = T\), the level of irreversibility can be
-computed as the absolute difference between the value of the correlation
-between the forward and reversed time-series, respectively. \(\Delta t\)
+computed as the absolute difference between the correlations of the forward and reversed time-series, respectively. \(\Delta t\)
 represents the time shifting parameter \(T\):
 \begin{equation}
 I_{x,y}(T) = |c_{forward}(T) - c_{reversal}(T)|
 \end{equation}
 
-The value of \(T\) is given by, for each dataset, iterating through
+The value of \(T\) is given by iterating through
 values of \(T\) and identifying the value which provides the strongest
-difference between conditions. Maximal differences between the
+difference between conditions for each dataset. Maximal differences between the
 correlation of the forward and reversed time-series can be found when
 one time-series has a strong dependency on time that the other does not.
 The forward \(x_i(t)\) and reversal \(x^{(r)}_i(t)\) matrices are
-defined as the dynamical evolution of the variable describing the
+defined in the multidimensional case as the dynamical evolution of the variable describing the
 system, wherein \(i\) represents the different dimensions of the system.
 The functional causal dependencies for the forward and reversed matrices
 are then expressed by the normalized mutual information based on their
@@ -303,7 +315,7 @@ FS_{reversal,ij}(\Delta t) = -\frac{1}{2}log[1-<x_i^{(r)}(t),x_j^{(r)}(t+\Delta 
 \end{equation}
 
 
-Mutual information is utilized as the relationship between variables in
+where FS is the functional similarity between $x_i(t)$ and $x_j(t+\Delta t)$. Mutual information is utilized as the relationship between variables in
 the multi-dimensional time-series is not necessarily linear. The
 absolute quadratic difference of these matrices is the irreversibility
 matrix
@@ -497,15 +509,13 @@ users of ayahuasca/DMT and cannabis.
 \subsection{Statistical analysis}
 Changes
 in irreversibility, hierarchy, and trophic coherence were calculated for
-each condition with a Wilcoxon rank-sum test with \(\alpha = 0.05\) as
+each condition with a Wilcoxon signed-rank test with \(\alpha = 0.05\) as
 the threshold for statistical significance, implemented in the R package
-\texttt{ggsignif} \parencite{ggsignif, Tidyverse, Package}. For DMT, we fit post-DMT data (irreversibility or
-directedness) to a linear mixed effects model with the MATLAB function
-\texttt{fitlme} with pre-injection, or baseline, data as a covariate and
-group as the fixed effect \parencite{MATLAB}. Furthermore, we tested for interaction
-effects between group and pre-injection data.
+\texttt{ggsignif} \parencite{ggsignif, Tidyverse, Package}. For ayahuasca,
+a linear mixed-effects model was fit to irreversibility, hierarchical levels, and
+trophic coherence in order to control for varying dosages between subjects. Effect sizes reported as Cohen's d with 95\% confidence intervals. 
 
-A linear mixed effects model was fit to the ayahuasca data with
+We then fit a linear mixed-effects model to the ayahuasca data with
 ayahuasca or baseline condition as the outcome variable with time since
 last ceremony (recency) and the number of total ceremonies, as well as
 their interaction, as fixed effects, and max DMT concentration in the
@@ -514,10 +524,10 @@ intercept was allowed in the model. Linear fit was determined with the
 MATLAB function \texttt{polyfit} and \(R^2\) as the squared correlation
 coefficient.
 
-Changes across conditions for the full 80 region and functional network
+Changes across conditions for the full 80 regions and 7 resting-state network
 hierarchical levels were obtained via a three-step process.
 Non-parametric, two-tailed 10,000 iteration permutation testing was
 performed for each region or functional network with a p-threshold of
-0.01. Benjamini-Hochberg False Discovery Rate was used with a threshold
+0.01. For the resting-state network analysis, 5,000 permutations were used. Benjamini-Hochberg False Discovery Rate was used with a threshold
 of 0.2 to identify false discoveries and correct for multiple
-comparisons \parencite{Benjamini1995}. 
+comparisons \parencite{Benjamini1995} for the full number of parcels, and 0.05 for resting-state networks. 

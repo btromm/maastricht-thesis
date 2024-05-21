@@ -1,2 +1,137 @@
 \chapter{Discussion}
-This is the discussion.
+Here we apply trophic coherence, a measure of the hierarchy of complex networks, to the effective connectivity derived from irreversibility across ayahuasca, DMT, and the chronic and occasional users of cannabis. These results present the use of direct measures of hierarchy on psychedelic data for the first time, and advance our understanding of how psychedelics modulate the hierarchical organization of the brain in both healthy long-term users of ayahuasca, and relatively naive users of DMT. Our main finding, that directedness decreases under both ayahuasca and DMT, is consistent with previous work showing a compression of the principal gradient of cortical hierarchy under LSD, and lends credence to a recent, unified theory of psychedelic action \parencite{Girn2022, Carhart-Harris2019a}.
+
+We began with the analysis of irreversibility across conditions. We found that irreversibility decreases significantly for DMT, while a nonsignificant trend toward decreased irreversibility was found for the occasional use of cannabis -- an intriguing finding, as one might intuitively expect that an effect of a drug would be nullified by tolerance effects. No trend was found for occasional use.  It remains unknown whether the nonsignificant trend for ayahuasca is a result of tolerance or dosage -- while users both consumed a very large amount of ayahuasca over their lifetime (mean = 564, SD = 650), they also tended to consume \textasciitilde25\% of the DMT that users in the DMT study consumed. This presents a limitation of the present work -- while we controlled for differences in dosage within conditions, we do not make any statistical comparisons across conditions due to differences in fMRI acquisition protocol and participant demographics. With that, it was not possible to control for dosage across conditions, and it is nontrivial to make any inferences regarding between-condition effects. While it has been previously shown that irreversibility presents a more sensitive measure of states of consciousness than functional connectivity, an interpretation of what irreversibility in the human brain means is sorely needed \parencite{Deco2022,Kringelbach2023}. Irreversibility is defined as the Kullback-Leibler distance between the forward and backward transition probabilities of the dynamical evolution of a system. It is therefore a measurement of the time-asymmetry of a system. This feature relates irreversibility directly to the production of entropy in a system -- breaking of the detailed balance, where net fluxes between underlying states become irreversible in time, results in the production of entropy \parencite{Deco2022}. According to \textcite{Buzsaki2019}, the self-organized dynamics of the brain constrain how it works on the world, rather than being driven by sensations. From this assumption, it is clear that time-asymmetric, irreversible processes would be driven by extrinsic dynamics. Though previous work by \textcite{Lynn2021} has shown that entropy production in the brain increases with the physical exertion associated with a task, it also increases with cognitive exertion. Thus the association between irreversibility and hierarchy is nontrivial -- it cannot be said with certainty that a change in irreversibility is associated solely with an alteration in extrinsic versus intrinsic driving of the system, or with sensitization of higher-order networks like transmodal cortex to unimodal sensory cortices.
+
+A variety of previous work has shown that psychedelics increase entropy in the brain \parencite{Carhart-Harris2014, Lebedev2015, Tagliazucchi2014, Lebedev2016, Kringelbach2020a, Viol2017, Barrett2020, Varley2020, Luppi2023a},
+though researchers vary in a) the method used for analyzing entropy and b) the specific features of neuroimaging data they are measuring \parencite{Shinozuka2023,McCulloch2022,McCulloch2023}. Here, we estimate the production of entropy, which is distinct from previous examinations of Shannon entropy or Lempel-Ziv complexity \parencite{Tagliazucchi2014,Lempel1976,Ziv1977}. The wealth of research investigating the entropic effects of psychedelics is derived from the entropic brain hypothesis, defined by \textcite{Carhart-Harris2014}, which posits that the subjective effects of psychedelics are reflective of global increases in entropy. Interestingly, psychedelics represent the first finding of increased entropy in the human brain, whereas a decrease in entropy has previously been found for a variety of diminished or loss of consciousness states \parencite{Zhang2001, Casali2013, Abasolo2015, Mediano2021} Though the evidence across these methodologies indicates that psychedelics do, indeed, increase entropy in the brain, replication is needed to confirm this evidence. Recent efforts by \textcite{McCulloch2023} have resulted in the creation of a toolbox that will allow researchers to independently replicate a wide variety of entropy metrics on their own data, which is an invaluable tool for replication of previous findings.
+
+At the upper bound, entropy production is inverse to entropy -- as entropy becomes maximized within a system, reaching an asymptotic limit, entropy production decays to zero. Importantly, entropy production is defined explicitly as the derivative of entropy, the rate at which it changes. Entropy production can be negative for microscopic systems, but due to fluctuation theorems, the probability that the reverse, entropy-producing process will occur decreases exponentially with the amount of entropy which needs to be reduced. Thus, for macroscopic systems, the probability of a decrease in entropy becomes extremely low. Furthermore, it is important to note that it is not merely by the nonequilibrium dynamics of microscopic processes that entropy is produced at larger scales. By coarse-graining a system, it is theoretically possible to average over the nonequilibrium degrees of freedom and "regain" detailed balance \parencite{Lynn2021,Esposito2012,Martinez2019}. Irreversibility at larger scales, like those found in neural timeseries, may be emergent rather than resulting directly from nonequilibrium microscopic interactions.
+
+It is unlikely that entropy is fully maximized within the human brain regardless of the state of consciousness. Previous work has sought to explain an increase in entropy as reflective of criticality within the brain, a phenomena where a system is poised between 'order' and 'disorder,' such that specific features including power-law scaling and fractal self-similarity are found \parencite{Bak1999, Carhart-Harris2019a, Petermann2009}. However, an increase in entropy does not directly imply a move toward criticality. Maximization of entropy, or specifically \textit{configurational} entropy, measuring the number of metastable states a system can take on, would imply criticality \parencite{Haldeman2005}. However, no studies to date have demonstrated maximization of this configurational entropy -- to the contrary, previous work by \textcite{Ruffini2023} who fit an Ising model to fMRI data of LSD showed that the brain operates near criticality in resting-state; LSD brought the brain away from criticality. Our results show that under both a low dose of DMT in the form of ayahuasca, and a high dose of DMT (20mg) delivered intravenously, entropy is not maximized, because irreversibility remains above zero. It may be the case that this is an error resulting from the proxy method rather than direct examination of production entropy. This may very well be the case, given that previous work by \textcite{Atasoy2017} has shown elements of power-law scaling under psychedelics. Future work examining the relationship between psychedelics, entropy, and criticality should seek to use more precise measurements to analyze production entropy, though these are computationally expensive and often difficult to interpret \parencite{Lynn2021,Seif2021,Deco2021a}. However, the methods described by \textcite{Lynn2021} are reasonable to compute across resting-state networks and may still provide viable global measures of production entropy in the psychedelic state.
+
+While a number of previous studies with neuroimaging data have applied graph-theoretical measures to the brain, mostly with functional connectivity \parencite{Sporns2016, Bullmore2009,Goldenberg2015}, to our knowledge this is the first time trophic coherence has been evaluated on effective connectivity data in the human brain, and a first example of measuring brain hierarchy within the context of chronicity of use of psychedelics and cannabis. Previous work by \textcite{Luppi2021} utilized functional connectivity with measures including small-world propensity. Though these measure nested hierarchies, they are based on an undirected network derived from functional connectivity approaches and do not allow for causal inferences regarding directed flow of information through the brain \parencite{Reid2019}. Effective connectivity offers both a way of utilizing graph-theoretical measures that are only valid on directed networks, such as trophic coherence and non-normality \parencite{Pilgrim2020, Asllani2018}. Trophic coherence has been shown to be a proxy for the stability of food webs \parencite{Johnson2014}, and the presence (or lack) of cycles within a graph is inherently linked with the directedness of that graph \textcite{Johnson2017a}. It has been closely linked with hierarchy, where a hierarchy akin to dictatorship is maximally coherent, and anarchy is maximally incoherent \parencite{Pagani2019, Pilgrim2020}. These analogies work well in the present work, given the RElaxed Beliefs Under Psychedelics (REBUS) model considers the psychedelic state akin to an 'anarchic brain' -- that is, decreased within-network integrity and between-network segregation results in greater feedback between regions \parencite{Carhart-Harris2019a}. It is important to note that an anarchic brain state does not necessitate the total absence of hierarchy. Rather, it is assumed that metastable, quasi-hierarchical substates are traveled through over the course of the brain's trajectory \parencite{Pilgrim2020}. Future work should explore the dynamics of rich club or clique generation with regard to directedness \parencite{Dennis2013, Deco2021}.
+
+With this in mind, increased metastability may be closely linked with decreased directedness \parencite{Lord2019}. Here, we found decreased directedness under ayahuasca and DMT, which provides direct evidence for the hypothesis that psychedelics induce more anarchic, or less hierarchical, brain states. Furthermore, this finding is consistent with previous work by \textcite{Lord2019} indicating that the brain undergoes increased metastability under psychedelics. Previous criticism by \textcite{Papo2016} argued that the short scanning periods, especially in fMRI data, are insufficient for establishing the true number of metastable states the brain travels through. It may be the case that trophic coherence, and similar
+graph-theoretical measures of hierarchy, may provide a sufficient methodology for understanding criticality
+within fMRI research. Future research should investigate the relationship between brain hierarchy, the
+emergence of quasi-stable states in less hierarchical states of consciousness, and metastability. While fMRI
+may be insufficient for metastability analysis, modalities with higher temporal resolution that retain
+some of the spatial resolution of MRI, like MEG, may be a perfect fit for this line of work. 
+
+Previous work examining time to consensus in simulated social systems has shown directedness is associated with the efficiency of information transmission -- the more directed a network, the faster the time to consensus \parencite{Pilgrim2020}. However, our findings
+that cannabis increases directedness complicate this
+issue -- it is unlikely that cannabis increases efficiency. This presents an interesting case that should be examined by future research, given that higher metastability and associated criticality are maximally efficient with regard to information transmission \parencite{Shew2009, Shew2013, Barnett2013}. Future research should relate local and global graph metrics, including contagion dynamics and consensus timing, to better characterize the relationship
+between trophic coherence and the efficiency of information transmission within brain networks.
+
+
+Importantly, we apply a direct measure of hierarchy, trophic coherence, to better assess changes in the brain and empirically test the theory that psychedelics flatten brain hierarchy \parencite{Carhart-Harris2019a}. A recent, unified model of the action of psychedelics on the brain which combines hierarchical predictive coding with the free energy principle, 'RElaxed Beliefs Under Psychedelics' (REBUS), proposed that psychedelics induce a relaxation, or increase in sensitivity, of high-level priors, which are thought to be encoded or represented in the neural activity of transmodal association cortex \parencite{Friston2010, Carhart-Harris2019a}. Since publication, researchers have sought to understand how we can best empirically test this idea. Though we do not currently understand how to test directly for the relaxation of high-level priors, recent work has proposed that these priors are, in fact, encoded hierarchically within the brain \parencite{Brodski-Guerniero2017}. \textcite{Caucheteux2023} found, indeed, that frontoparietal cortices predicted higher-level, more contextual representations than temporal cortices. If this is the case, then
+direct measures of the topological hierarchy of the brain are viable for testing whether the hierarchy of the brain
+'flattens' under psychedelics. Indeed, we find that directedness decreases under both ayahuasca and DMT. Interestingly,
+hierarchy increases in the occasional use of cannabis, but no change was found for chronic users. 
+Similar
+results with complexity and entropy analysis of ketamine have been shown, indicating that ketamine, despite acting
+principally on the N-methyl-D-aspartate (NMDA) receptor, may act in a similar fashion with regard to hierarchical
+organization \parencite{Roy2021, Sarasso2015, Farnes2020, Wang2017}. However, ketamine differs in that
+therapeutic doses increase complexity, while anesthetic doses are associated with decreased complexity. Future work
+should seek to examine hierarchical organization under ketamine, given that psychedelics and ketamine are
+thought to converge on similar signaling pathways involving neuroplasticity \parencite{Aleksandrova2021}. It is thus believed that psychedelics
+may induce a unique effect on the hierarchical organization of the brain relative to other psychoactive substances,
+though future work may better inform the contrast between psychedelics and other drugs. Our findings are consistent with previous work indicating a compression of the principal gradient spanning unimodal to transmodal cortex, or the bottom to top of the hierarchy, under psychedelics \parencite{Girn2022}, as well as work by \textcite{Singleton2022} indicating that psychedelics flatten the control energy landscape of the brain, allowing more facile state transitions. While the latter
+is not a measure of hierarchy \textit{per se}, it is consistent with the idea of quasi-stable hierarchies within
+the broader, 'anarchic' network under psychedelics.
+
+We propose that the flattening of brain hierarchy under psychedelics occurs at a global level over the course
+of a psychedelic experience, but that quasi-stable hierarchical structures emerge over shorter timescales and
+in lower-order spaces of the whole brain network. The use
+of dynamic approaches to whole-brain modeling allows for analysis of dynamic alterations in global hierarchical
+structures over the scanning period \parencite{Bahrami2022,Deco2014}. Previous research with dynamic functional connectivity and leading
+eigenvector dynamics analysis (LEiDA) allowed for characterization of metastable substates within the psychedelic
+experience that, with whole-brain modeling, allows for characterization not only of dynamical substates, but of directed network effects including stability, consensus timing, and the reconfiguration of directedness and 
+trophic levels \parencite{Lord2019,Cabral2017}.
+
+Lastly, we performed an exploratory analysis of the chronic effects of psychedelics, contrasting them with
+the well-defined characteristics of the tolerance effects induced by cannabis. We find that psychedelics
+differ greatly, in that patterns of alterations in irreversibility are opposed for psychedelics relative
+to cannabis. We find that irreversibility does not significantly decrease for ayahuasca,
+but that it does for DMT, an effect we cannot disentangle from differences in dosage. Irreversibility decreases for occasional users of cannabis but not for chronic users, indicating
+that some element of tolerance or chronicity may be present under both psychedelics and cannabis.
+This effect is made more nuanced by our measure of directedness, where both ayahuasca
+and DMT show decreases in directedness, but increases are found for occasional users and
+no significant effect is found for chronic users of cannabis. These results distinguish
+that under both lower doses and higher doses of DMT itself, changes in hierarchy are found,
+and argue against the notion that lifetime use or recency of use of psychedelics has
+any meaningful relationship to effects in response to psychedelics. Though we cannot
+compare directly, it is notable that baseline and placebo conditions for ayahuasca and DMT
+differ in their directedness, where ayahuasca users generally had lower directedness
+at baseline than users of DMT. Further research should seek to compare long-term users
+of psychedelics with naive users in a controlled setting, matching for age and sex if possible,
+and using the same acquisition and recruitment protocols. 
+
+Though structural changes have
+been found in the morphology of long-term users of ayahuasca \parencite{Bouso2015}, 
+we do not find here any opposing results with regard to irreversibility across the brain
+or brain hierarchy. With regard to the hierarchical levels of each region in the brain,
+we saw a notable difference between ayahuasca and DMT in that levels decreased significantly
+for ayahuasca, with a few notable exceptions at the bottom of the hierarchy moving up in influence.
+In contrast, no significant effect was found for DMT -- this is likely to be because of the
+high variability in whether a region increased in influence or decreased. This differential
+effect between ayahuasca and DMT is likely then to result from either chronicity of use,
+differences in dose, or possibly the inclusion of a monoamine oxidase inhibitor (MAOI) in
+the preparation of DMT. Future work should seek to compare DMT administration directly
+in both conditions with the same dosage in order to isolate the effects of chronicity.
+
+We noticed significant changes in hierarchical influence of resting-state networks
+between conditions. Ayahuasca resulted in significant decreases in hierarchy of the
+dorsal attention network, salience network, limbic network, frontoparietal network, and default mode network, while the same networks were only significantly modulated under DMT in the dorsal attention and limbic networks. A similar trend was seen for all networks between ayahuasca and DMT,
+except in the visual network, which saw a strong, significant decrease for DMT but a small, nonsignificant increase for ayahuasca. It is difficult to interpret these changes between psychedelics and cannabis, but generally we found increases in resting-state network influence for all but visual network under occasional use, and decreases for the chronic use of cannabis. This differential regulation of resting-state networks is easier to isolate, given that
+the dosage and acquisition protocol were identical across chronic and occasional conditions. These results, then, provide further evidence toward the chronic effects of cannabis, indicating
+that chronic use reverses response patterns to cannabis with regard to hierarchy. Previous work has largely focused on neuromodulation at the cellular
+and molecular level \parencite{Hirvonen2012, Bosker2013}, though some work into fingerprints
+of occasional and cannabis use has been performed, which is the primary study predating our analysis of this data \parencite{Ramaekers2022}. \textcite{Ramaekers2020} found that tolerance to cannabis occurs rapidly, and the
+effect is maintained with continued use. Chronic
+effects of cannabis are highly reversible, though, which we did not think would be the
+case with psychedelics.
+
+Given the heterogeneity of lifetime use and recency of use within
+the ayahuasca group, we decided to analyze brain hierarchy in both baseline
+and psychedelic conditions against this demographic data. Interestingly,
+we find no significant effect of recency of use or number of ceremonies
+on either baseline hierarchy or under ayahuasca. This provides evidence
+that long-term use of psychedelics does not have significant effects
+on the functional hierarchical organization of the brain in the long-term. It is, however, unlikely that the sample sizes here are sufficient enough to detect a robust statistical relationship between these phenomena. These
+results lie in contrast to recent work in patients with treatment-resistant depression, where changes in network cartography were found three weeks after
+the administration of psilocybin, but not escitalopram \parencite{Daws2022}. The contrasting results here suggest that psychedelics may modulate network structure
+and hierarchical organization in the long-term in patients with mental health conditions, but not in healthy volunteers. Psychedelics, then, would be considered as 'adaptogenic,' a term typically used to describe the pharmacology
+of alternative medicines that argues the principal action of some psychoactive substances is to normalize, or balance, brain activity, cognition, and emotion.
+
+Previous work in complexity and entropy has focused on advancing methodologies in order to develop more sensitive measures of
+states of consciousness. First work in this area by \textcite{Casali2013} showed that transcranial magnetic stimulation
+combined with Lempel-Ziv complexity analysis in patients with disorders of consciousness was an extremely sensitive measure differentiating
+between states like vegetative, unresponsive wakefulness, and minimally conscious states. Recent work by \textcite{Tewarie2023, Kringelbach2023} has shown irreversibility to be a superior measure to functional connectivity
+in differentiating between brain states in fMRI and MEG data. Here, we show trophic coherence, which in this context
+effectively constitutes a dimensionality reduction of the effective connectivity of irreversibility, performs
+equally well as effective connectivity of irreversibility in differentiating between brain states. Interestingly,
+we show that a hyperparameter-optimized SVM discriminates not only between drug and placebo conditions, but between ayahuasca and DMT, chronic and occasional use of cannabis, and the respective baseline states for each condition. All data was
+normalized prior to model fitting, which eliminates any opportunity for the classifier to exploit differences in the
+arbitrary bounds of hierarchical levels within conditions. Though trophic coherence remains more computationally
+expensive than model-free irreversibility for the purpose of classifying states of consciousness, we maintain
+that the method well characterizes a unique feature, brain hierarchy, of otherwise highly-noisy neural activity.
+
+
+In this study, we determined alterations
+in irreversibility and brain hierarchy through
+model-free and whole brain modelling-based analysis of the directed networks underpinning
+alterations in directedness under the chronic and naive use of psychedelics, and the chronic and occasional use of cannabis. Due to limitations of the design, we are not able to make statistical comparisons across groups. However, the results
+are compelling and provide first evidence
+that the functional effects of the long-term
+use of psychedelics are distinct from cannabis. Furthermore, we provide direct evidence that the hierarchy of the brain is reduced under psychedelics, lending support to the REBUS model. Future research should seek to directly examine
+the chronic effects of psychedelic use on
+functional brain dynamics and hierarchy, though
+additional data is required to understand this.
+Given the rapid rate at which psychedelics are being
+administered to patients, and with ongoing clinical trials
+into the effects of psychedelics for the treatment of psychiatric illnesses, understanding
+the chronic effects of psychedelics is paramount to both understanding
+how these substances can treat mental health conditions, as well as
+establishing their safety and efficacy.

@@ -106,7 +106,7 @@
 {\large \vspace*{1ex}
     {{\@college} \par}
 \vspace*{1ex}
-    {Total word count:\\Dr. Morten Kringelbach\\University of Oxford\\Dr. Jan Ramaekers\\Maastricht University \par}
+    {Total word count: 12239\\Dr. Morten Kringelbach\\University of Oxford\\Dr. Jan Ramaekers\\Maastricht University \par}
 \vspace*{25mm}
     {{\submittedtext} \par}
 \vspace*{1ex}
