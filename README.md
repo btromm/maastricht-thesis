@@ -8,7 +8,7 @@ Changes in brain hierarchy following acute and chronic use of DMT and cannabis
 > bobby.tromm@gmail.com  
 > Centre for Eudaimonia and Human Flourishing, Linacre College, University of Oxford  
 > Department of Psychopharmacology, Maastricht University  
-> :telephone:  [github](https://github.com/btromm), [linkedin](https://www.linkedin.com/in/bobby-tromm-49ba61157/)
+> :telephone:  [github](https://github.com/btromm), [linkedin](https://www.linkedin.com/in/btromm/)
 
 ## Thesis Advisors
 ### Morten L. Kringelbach
